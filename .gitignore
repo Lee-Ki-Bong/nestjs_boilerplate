@@ -1,7 +1,7 @@
 # Ignore directory
 dist/
 
-# mysql
+# Ignore mysql directory
 mysql/
 
 # Ignore .env file
