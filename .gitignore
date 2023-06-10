@@ -1,0 +1,21 @@
+# Ignore directory
+dist/
+
+# mysql
+mysql/
+
+# Ignore .env file
+.env
+
+# Ignore node_modules directory
+node_modules/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# .sh
+conn_container.sh
