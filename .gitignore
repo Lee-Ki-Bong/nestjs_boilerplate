@@ -10,6 +10,9 @@ mysql/
 # Ignore node_modules directory
 node_modules/
 
+# log
+logs/
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
