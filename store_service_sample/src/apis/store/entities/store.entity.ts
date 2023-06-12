@@ -1,14 +1,8 @@
-import {
-  Entity,
-  Column,
-  PrimaryColumn,
-  PrimaryGeneratedColumn,
-  Generated,
-} from 'typeorm';
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class StoreInfo {
-  @PrimaryGeneratedColumn('uuid', { comment: '서비스 유일코드(uuid/v4)' })
+  @PrimaryColumn({ length: 200, comment: '서비스 유일코드(s_uuidv4)' })
   si_service_id: string;
 
   @Column({ length: 20, comment: '상점 아이디' })

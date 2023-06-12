@@ -1,19 +1,18 @@
 import { registerAs } from '@nestjs/config';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { StoreInfo } from 'src/apis/store/entities/store.entity';
-import { DefaultNamingStrategy } from 'typeorm';
+import { TableNamingStrategy } from '../database/strategy/table.naming.strategy';
 
 export const typeOrmOption = registerAs(
   'typeOrmOption',
   (): TypeOrmModuleOptions => ({
     type: 'mysql',
-    host: 'boilerplate-mysql-1',
-    port: 3306,
-    username: 'root',
-    password: '1234',
-    database: 'nms_store',
+    host: process.env.DB_HOST,
+    port: parseInt(process.env.DB_PORT),
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
     entities: [__dirname + '/../../apis/**/*.entity.*'],
     synchronize: false,
-    namingStrategy: new DefaultNamingStrategy(), // 네이밍 전략 설정
+    namingStrategy: new TableNamingStrategy(), // 네이밍 전략 설정
   }),
 );
