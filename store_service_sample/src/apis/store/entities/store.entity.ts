@@ -1,3 +1,5 @@
+'use strict';
+
 import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 @Entity()
