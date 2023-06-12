@@ -25,6 +25,7 @@ export class StoreInfoSubscriber
   }
 
   beforeUpdate(event: UpdateEvent<StoreInfo>) {
+    // event.updatedColumns.map((col) => console.log(col.propertyName));
     console.log(
       `StoreInfo ${event.entity.si_store_id} update 를 시작하려한다.`,
     );
