@@ -1,7 +1,9 @@
 import { Global, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { winstonLoggerOptions } from './configures';
+import { WinstonLoggerService } from './services';
 
-const providers = [];
+const providers = [WinstonLoggerService];
 
 @Global()
 @Module({
@@ -9,7 +11,7 @@ const providers = [];
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: ['.development.env'],
-      load: [],
+      load: [winstonLoggerOptions],
     }),
   ],
   providers: [...providers],
