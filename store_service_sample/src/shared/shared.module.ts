@@ -1,6 +1,7 @@
 import { Global, Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { winstonLoggerOptions } from './configures';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { typeOrmOption, winstonLoggerOptions } from './configures';
 import { WinstonLoggerService } from './services';
 
 const providers = [WinstonLoggerService];
@@ -11,7 +12,13 @@ const providers = [WinstonLoggerService];
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: ['.development.env'],
-      load: [winstonLoggerOptions],
+      load: [winstonLoggerOptions, typeOrmOption],
+    }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: (configService: ConfigService) =>
+        configService.get('typeOrmOption'),
+      inject: [ConfigService],
     }),
   ],
   providers: [...providers],
