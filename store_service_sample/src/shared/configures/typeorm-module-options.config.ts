@@ -12,7 +12,7 @@ export const typeOrmOption = registerAs(
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    entities: [__dirname + '/../../apis/**/*.entity.*'],
+    entities: [__dirname + '/../../**/*.entity.*'],
     subscribers: [__dirname + '/../../apis/**/*.subscriber.*'],
     synchronize: false,
     namingStrategy: new TableNamingStrategy(), // 네이밍 전략 설정

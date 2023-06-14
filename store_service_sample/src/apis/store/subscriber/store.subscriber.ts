@@ -4,7 +4,7 @@ import {
   InsertEvent,
   UpdateEvent,
 } from 'typeorm';
-import { StoreInfo } from '../entities/store.entity';
+import { StoreInfo } from '../../../entities/store.entity';
 
 @EventSubscriber()
 export class StoreInfoSubscriber

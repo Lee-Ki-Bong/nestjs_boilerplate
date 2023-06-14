@@ -1,8 +1,9 @@
 'use strict';
 
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, EntityOptions } from 'typeorm';
 
-@Entity()
+// @Entity({ orderBy: { si_category: 'DESC' } } as EntityOptions)
+@Entity({ orderBy: { si_category: 'DESC' } } as EntityOptions)
 export class StoreInfo {
   @PrimaryColumn({ length: 200, comment: '서비스 유일코드(s_uuidv4)' })
   si_service_id: string;

@@ -4,7 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SharedModule } from './shared/shared.module';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { LoggingInterceptor } from './interceptros/logging.interceptor';
+import { LoggingInterceptor } from './interceptors/logging.interceptor';
 
 const apiModules = [StoreModule];
 
